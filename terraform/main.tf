@@ -46,7 +46,7 @@ resource "aws_eks_cluster" "my-eks" {
 }
 
 resource "aws_iam_role" "workernodes" {
-  name = "eks-node-group-example"
+  name = "eks-node-group-example1"
 
   assume_role_policy = jsonencode({
     Statement = [{
