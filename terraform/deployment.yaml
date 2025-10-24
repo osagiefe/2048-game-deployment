@@ -7,6 +7,6 @@ metadata:
 spec:
    containers:
    - name: 2048-container
-     image: blackicebird/2048
+     image: alexwhen/docker-2048
      ports:
        - containerPort: 80
