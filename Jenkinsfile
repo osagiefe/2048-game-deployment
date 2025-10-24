@@ -24,7 +24,7 @@ pipeline {
             steps{
                 script{
                     dir('terraform'){
-                         sh 'terraform init -reconfigure'
+                         sh 'terraform init'
                         
                     }
                 }
@@ -62,8 +62,8 @@ pipeline {
                         echo "You have chosen to ${params.'action'} the resources"
                         dir('terraform'){
                             sh 'terraform $action --auto-approve'
-                            sh 'aws eks describe-cluster --name my-eks-cluster1 --region us-east-1'
-                            sh ('aws eks update-kubeconfig --name my-eks-cluster1 --region us-east-1')
+                            sh 'aws eks describe-cluster --name my-eks-cluster2 --region us-east-1'
+                            sh ('aws eks update-kubeconfig --name my-eks-cluster2 --region us-east-1')
                             //sh "kubectl get ns"
                             sh "kubectl apply -f deployment.yaml"
                             sh "kubectl apply -f service.yaml"
